@@ -1,0 +1,54 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double Sms=sc.nextDouble();
+        double Min=sc.nextDouble();
+
+        double addSms=Math.abs(Sms-20);
+        double addMin=Math.abs(Min-60);
+
+        double priceSms=addSms * 0.06;
+        double priceMin=addMin * 0.10;
+
+        double commSms=priceSms * 0.20;
+        double commMin=priceMin * 0.20;
+        double totalComm=commSms+commMin;
+
+        double totPriceSms=priceSms+commSms;
+        double totPriceMin=priceMin+commMin;
+
+        double totalBill=  totPriceSms+totPriceMin+12.00;
+
+        if(Sms>20 && Min>60)
+        {
+            System.out.printf("%.0f additional messages for %.2f levas%n%.0f additional minutes for%.2f levas%n%.2f additional taxes%n%.2f total bill",
+                    addSms,priceSms,addMin,priceMin,totalComm,totalBill);
+        }
+        else if(Sms<=20 && Min>60)
+        {
+            totalBill = priceMin + commMin + 12.00;
+            System.out.printf("0 additional messages for 0.00 levas%n%.0f additional minutes for %.2f levas%n%.2f additional taxes%n%.2f total bill",
+                    addMin,priceMin,commMin,totalBill);
+        }
+        else if(Sms>20 && Min<=60)
+        {
+            totalBill= priceSms + commSms + 12.00;
+            System.out.printf("%.0f additional messages for %.2f levas%n0 additional minutes for 0.00 levas%n%.2f additional taxes%n%.2f total bill",
+                    addSms,priceSms,commSms,totalBill);
+
+        }
+        else
+        {
+            System.out.println("0 additional messages for 0.00 levas");
+            System.out.println("0 additional minutes for 0.00 levas");
+            System.out.println("0.00 additional taxes");
+            System.out.println("12.00 total bill");
+        }
+
+
+    }
+}
+

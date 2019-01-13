@@ -1,0 +1,16 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String degrees=sc.nextLine();
+        String[] parts=degrees.split(" ");
+        for (String doubleString : parts) {
+                double F;
+                double var = Double.parseDouble(doubleString);
+                F = (var * 1.8) + 32;
+                System.out.printf("%.0f%n", F);
+            }
+    }
+}

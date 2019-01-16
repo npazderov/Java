@@ -16,3 +16,16 @@
             System.out.print(String.join("8=D",arrayStr));
             String arrayString= Arrays.toString(arr);
             System.out.println(arrayString.substring(1,arrayString.length()-1));
+                       
+              /*     String[] list=sc.nextLine().split(",");
+            ArrayList<String> result= new ArrayList<>();
+
+            for(String element:list)
+            {
+                if(!result.contains(element))
+                {
+                    result.add(element);
+                }
+            }
+            System.out.print(String.join(",",result));
+            */
